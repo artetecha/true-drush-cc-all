@@ -27,3 +27,17 @@ But if one were to run `drush cache-clear all` this will not clear `token`, `var
 This is because `drush cc all` does only two things: it clears internal drush caches and it invokes `drupal_flush_all_caches()`. This is a core Drupal API that is not aware of the various implemenations of `hook_drush_cache_clear()`. 
 
 What we provide here is a re-implemention of `all` so that it truly clears all the caches.
+
+## Installation
+
+Place `ccall.drush.inc` in one of the locations where `drush` will look for it. Currently, the [official documentation](http://docs.drush.org/en/master/commands/) says: 
+
+Drush searches for commandfiles in the following locations:
+
+- The "`/path/to/drush/commands`" folder.
+- Folders listed in the 'include' option (see `drush topic docs-configuration`).
+- The system-wide drush commands folder, e.g. `/usr/share/drush/commands`
+- The `.drush` folder in the user's HOME folder.
+- `/drush` and `/sites/all/drush` in the current Drupal installation
+- All enabled modules in the current Drupal installation
+- Folders and files containing other versions of drush in their names will be *skipped* (e.g. `devel.drush4.inc` or `drush4/devel.drush.inc`). Names containing the current version of drush (e.g. `devel.drush5.inc`) will be loaded.
