@@ -30,9 +30,7 @@ What we provide here is a re-implemention of `all` so that it truly clears all t
 
 ## Installation
 
-Place `ccall.drush.inc` in one of the locations where `drush` will look for it. Currently, the [official documentation](http://docs.drush.org/en/master/commands/) says: 
-
-Drush searches for commandfiles in the following locations:
+Place `ccall.drush.inc` in one of the locations where `drush` will look for it. Currently, the [official documentation](http://docs.drush.org/en/master/commands/) says these locations are: 
 
 - The "`/path/to/drush/commands`" folder.
 - Folders listed in the 'include' option (see `drush topic docs-configuration`).
