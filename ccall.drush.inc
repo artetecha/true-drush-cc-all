@@ -36,6 +36,8 @@ function __ccall_clear_really_everything() {
   // Clear the remaining caches.
   foreach ($types as $type => $callback) {
     drupal_set_message("Clearing cache: $type");
-    call_user_func($callback);
+    if (function_exists($callback)) {
+      call_user_func($callback);
+    }
   }
 }
